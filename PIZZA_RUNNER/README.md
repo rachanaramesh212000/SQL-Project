@@ -125,3 +125,26 @@ ORDER BY customer_id;
 | 105          | 2 (Vegetarian) | 1               |
 
 - Customer 103 ordered the most pizzas (4 total).
+  ***
+  **Q6: What was the maximum number of pizzas delivered in a single order?**
+
+ ````sql
+    SELECT order_id, COUNT(*) AS pizza_in_order
+FROM customer_orders
+GROUP BY order_id
+ORDER BY pizza_in_order DESC
+LIMIT 1;
+````
+#### Steps:
+- Group all pizzas by order_id.
+- Count pizzas per order.
+- Sort descending to find the maximum
+#### Answer:
+
+| order\_id | pizza\_in\_order |
+| --------- | ---------------- |
+| 4         | 3                |
+
+  
+
+  
